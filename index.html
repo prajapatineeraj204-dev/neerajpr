@@ -213,6 +213,8 @@
             border-radius: 40px;
             box-shadow: 0 0 10px var(--primary);
             transition: 0.5s;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
@@ -551,6 +553,7 @@
             color: var(--text);
             font-size: 16px;
             resize: none;
+            transition: 0.3s;
         }
 
         .input-box input:focus,
@@ -570,8 +573,31 @@
         }
 
         .contact-form .btn {
-            border: none;
-            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .form-status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            display: none;
+        }
+
+        .form-status.success {
+            background: rgba(0, 255, 0, 0.2);
+            color: #0f0;
+            border: 1px solid #0f0;
+            display: block;
+        }
+
+        .form-status.error {
+            background: rgba(255, 0, 0, 0.2);
+            color: #f66;
+            border: 1px solid #f66;
+            display: block;
         }
 
         /* Footer */
@@ -830,7 +856,6 @@
             <p class="hidden">Crafting high-performance software with clean code and modern frameworks. Let's engineer excellence together.</p>
             <div class="hidden">
                 <a href="https://wa.me/918726831691" class="btn">Hire Me</a>
-                <!-- <a href="#portfolio" class="btn" style="background: transparent; color: var(--primary); margin-left: 15px; border: 1px solid var(--primary);">View Work</a> -->
             </div>
         </div>
         
@@ -846,15 +871,10 @@
         <div class="about-content">
             <div class="about-text hidden">
                 <h3>Laravel Developer & Backend Developer</h3>
-
                 <p>With over 3 years of experience as a Laravel Developer, I specialize in building robust, scalable web applications and APIs. My expertise lies in writing clean, maintainable code and crafting solutions that solve real business problems.</p>
-
                 <p>I’m passionate about backend development and have a strong foundation in PHP, MySQL, and RESTful architecture. I also enjoy collaborating with frontend teams to create seamless user experiences.</p>
-
                 <p>Staying up-to-date with the latest Laravel features and best practices is a core part of my workflow. Whether it’s optimizing performance, implementing complex logic, or integrating third-party services, I thrive on turning challenging requirements into elegant, efficient systems.</p>
-
                 <p>When I’m not coding, you’ll often find me exploring new tech stacks, experimenting with side projects, or helping fellow developers grow by sharing knowledge and mentoring.</p>
-
             </div>
             
             <div class="about-skills hidden">
@@ -894,208 +914,58 @@
         <h2 class="section-title hidden">My <span>Services</span></h2>
         
         <div class="services-container">
-            <div class="service-card hidden">
-                <i class="fas fa-database"></i>
-                <h3>Backend Development</h3>
-                <p>Building robust backend systems using Laravel, REST APIs, and secure database architectures.</p>
-            </div>
-    
-            <div class="service-card hidden">
-                <i class="fas fa-project-diagram"></i>
-                <h3>API Development</h3>
-                <p>Designing and developing scalable APIs for seamless integration across web and mobile platforms.</p>
-            </div>
-    
-            <div class="service-card hidden">
-                <i class="fas fa-lock"></i>
-                <h3>Authentication & Security</h3>
-                <p>Implementing secure authentication systems, role-based access, and data protection best practices.</p>
-            </div>
-    
-            <div class="service-card hidden">
-                <i class="fas fa-tachometer-alt"></i>
-                <h3>Performance Optimization</h3>
-                <p>Optimizing database queries, caching, and Laravel performance to ensure high-speed applications.</p>
-            </div>
-    
-            <div class="service-card hidden">
-                <i class="fas fa-chart-line"></i>
-                <h3>Business Logic & Custom Solutions</h3>
-                <p>Translating complex business requirements into elegant, maintainable software systems.</p>
-            </div>
-    
-            <div class="service-card hidden">
-                <i class="fas fa-code-branch"></i>
-                <h3>Version Control & CI/CD</h3>
-                <p>Using Git workflows and deployment pipelines for reliable, continuous delivery.</p>
-            </div>
-    
-            <div class="service-card hidden">
-                <i class="fas fa-credit-card"></i>
-                <h3>Payment Gateway Integration</h3>
-                <p>Integrating secure payment gateways like Stripe, Razorpay, PayPal to enable smooth online transactions.</p>
-            </div>
-    
-            <div class="service-card hidden">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <h3>Deployment & Hosting</h3>
-                <p>Configuring servers, setting up domains, and deploying Laravel applications with optimal security.</p>
-            </div>
-    
-            <div class="service-card hidden">
-                <i class="fas fa-bug"></i>
-                <h3>Debugging & Maintenance</h3>
-                <p>Proactive monitoring, bug fixing, and continuous maintenance to keep your application running smoothly.</p>
-            </div>
-    
-            <div class="service-card hidden">
-                <i class="fas fa-users"></i>
-                <h3>Team Collaboration</h3>
-                <p>Working closely with cross-functional teams to deliver complete, user-focused products on time.</p>
-            </div>
+            <div class="service-card hidden"><i class="fas fa-database"></i><h3>Backend Development</h3><p>Building robust backend systems using Laravel, REST APIs, and secure database architectures.</p></div>
+            <div class="service-card hidden"><i class="fas fa-project-diagram"></i><h3>API Development</h3><p>Designing and developing scalable APIs for seamless integration across web and mobile platforms.</p></div>
+            <div class="service-card hidden"><i class="fas fa-lock"></i><h3>Authentication & Security</h3><p>Implementing secure authentication systems, role-based access, and data protection best practices.</p></div>
+            <div class="service-card hidden"><i class="fas fa-tachometer-alt"></i><h3>Performance Optimization</h3><p>Optimizing database queries, caching, and Laravel performance to ensure high-speed applications.</p></div>
+            <div class="service-card hidden"><i class="fas fa-chart-line"></i><h3>Business Logic & Custom Solutions</h3><p>Translating complex business requirements into elegant, maintainable software systems.</p></div>
+            <div class="service-card hidden"><i class="fas fa-code-branch"></i><h3>Version Control & CI/CD</h3><p>Using Git workflows and deployment pipelines for reliable, continuous delivery.</p></div>
+            <div class="service-card hidden"><i class="fas fa-credit-card"></i><h3>Payment Gateway Integration</h3><p>Integrating secure payment gateways like Stripe, Razorpay, PayPal to enable smooth online transactions.</p></div>
+            <div class="service-card hidden"><i class="fas fa-cloud-upload-alt"></i><h3>Deployment & Hosting</h3><p>Configuring servers, setting up domains, and deploying Laravel applications with optimal security.</p></div>
+            <div class="service-card hidden"><i class="fas fa-bug"></i><h3>Debugging & Maintenance</h3><p>Proactive monitoring, bug fixing, and continuous maintenance to keep your application running smoothly.</p></div>
+            <div class="service-card hidden"><i class="fas fa-users"></i><h3>Team Collaboration</h3><p>Working closely with cross-functional teams to deliver complete, user-focused products on time.</p></div>
         </div>
     </section>
-    
     
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <h2 class="section-title hidden">My <span>Portfolio</span></h2>
-        
         <div class="portfolio-container">
-            <div class="portfolio-card hidden">
-                <img src="kramate.jpg" alt="Project 1">
-                <div class="portfolio-layer">
-                    <h4>Company Portfolio</h4>
-                    <p>Built a custom content management system (CMS) for Kramate to manage products, orders, and customers. Included full-stack e-commerce features with secure payment gateway integration and an intuitive admin panel.</p>
-                    <a href="https://kramate.com/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            
-            <div class="portfolio-card hidden">
-                <img src="pilot.jpg" alt="Project 2">
-                <div class="portfolio-layer">
-                    <h4>Pilot Examination</h4>
-                    <p>Developed a modern corporate website for PilotExaminations.com with Laravel backend and a dynamic CMS. Implemented interactive features using jQuery AJAX for seamless user interactions and real-time data updates.</p>
-                    <a href="https://pilotexaminations.com/" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="portfolio-card hidden">
-                <img src="peaktel.jpg" alt="Project 3">
-                <div class="portfolio-layer">
-                    <h4>IT Electronic website</h4>
-                    <p>Fitness tracking application with custom animations and data visualization.</p>
-                    <a href="https://peaktel.in/"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-            
-            <!-- <div class="portfolio-card hidden">
-                <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Project 4">
-                <div class="portfolio-layer">
-                    <h4>Dashboard Design</h4>
-                    <p>Analytics dashboard with real-time data visualization and reporting tools.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div> -->
-            
-            <!-- <div class="portfolio-card hidden">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Project 5">
-                <div class="portfolio-layer">
-                    <h4>Team Collaboration</h4>
-                    <p>Project management tool for remote teams with task tracking and messaging.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-             -->
-            <!-- <div class="portfolio-card hidden">
-                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Project 6">
-                <div class="portfolio-layer">
-                    <h4>CRM System</h4>
-                    <p>Custom customer relationship management system with automation features.</p>
-                    <a href="#"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div> -->
+            <div class="portfolio-card hidden"><img src="kramate.jpg" alt="Project 1"><div class="portfolio-layer"><h4>Company Portfolio</h4><p>Built a custom content management system (CMS) for Kramate to manage products, orders, and customers. Included full-stack e-commerce features with secure payment gateway integration and an intuitive admin panel.</p><a href="https://kramate.com/" target="_blank"><i class="fas fa-external-link-alt"></i></a></div></div>
+            <div class="portfolio-card hidden"><img src="pilot.jpg" alt="Project 2"><div class="portfolio-layer"><h4>Pilot Examination</h4><p>Developed a modern corporate website for PilotExaminations.com with Laravel backend and a dynamic CMS. Implemented interactive features using jQuery AJAX for seamless user interactions and real-time data updates.</p><a href="https://pilotexaminations.com/" target="_blank"><i class="fas fa-external-link-alt"></i></a></div></div>
+            <div class="portfolio-card hidden"><img src="peaktel.jpg" alt="Project 3"><div class="portfolio-layer"><h4>IT Electronic website</h4><p>Fitness tracking application with custom animations and data visualization.</p><a href="https://peaktel.in/"><i class="fas fa-external-link-alt"></i></a></div></div>
         </div>
     </section>
     
     <!-- Experience Section -->
     <section class="experience" id="experience">
         <h2 class="section-title hidden">My <span>Experience</span></h2>
-        
         <div class="timeline">
-            <div class="timeline-item left hidden">
-                <div class="timeline-content">
-                    <div class="date">Aug 2024 - Present</div>
-                    <h3>Laravel Developer</h3>
-                    <p>Kramate Pvt. Ltd., Ayodhya, Uttar Pradesh - Currently developing a full-stack e-commerce platform with a custom CMS and secure payment gateway integrations, delivering tailored solutions to enhance online business operations.</p>
-                </div>
-            </div>
-    
-            <div class="timeline-item right hidden">
-                <div class="timeline-content">
-                    <div class="date">Apr 2024 - Jul 2024</div>
-                    <h3>Laravel Developer</h3>
-                    <p>Raidlayer Webhost LTD PVT, Ahmedabad - Developed and maintained web applications, integrated payment gateways, and collaborated closely with frontend teams to deliver scalable, efficient solutions.</p>
-                </div>
-            </div>
-            
-            <div class="timeline-item left hidden">
-                <div class="timeline-content">
-                    <div class="date">Jul 2023 - Apr 2024</div>
-                    <h3>Laravel Developer</h3>
-                    <p>Codingclave Development LLP, Lucknow - Created and optimized Laravel applications, built REST APIs, mentored junior developers, and ensured high code quality across multiple projects.</p>
-                </div>
-            </div>
-    
-            <div class="timeline-item right hidden">
-                <div class="timeline-content">
-                    <div class="date">Jan 2023 - Jun 2023</div>
-                    <h3>Laravel Developer Intern</h3>
-                    <p>Nawabisouq PVT LTD , Lucknow - Assisted in developing web applications, wrote unit tests, and collaborated with senior developers to enhance application performance and security.</p>
-                </div>
+            <div class="timeline-item left hidden"><div class="timeline-content"><div class="date">Aug 2024 - Present</div><h3>Laravel Developer</h3><p>Kramate Pvt. Ltd., Ayodhya, Uttar Pradesh - Currently developing a full-stack e-commerce platform with a custom CMS and secure payment gateway integrations, delivering tailored solutions to enhance online business operations.</p></div></div>
+            <div class="timeline-item right hidden"><div class="timeline-content"><div class="date">Apr 2024 - Jul 2024</div><h3>Laravel Developer</h3><p>Raidlayer Webhost LTD PVT, Ahmedabad - Developed and maintained web applications, integrated payment gateways, and collaborated closely with frontend teams to deliver scalable, efficient solutions.</p></div></div>
+            <div class="timeline-item left hidden"><div class="timeline-content"><div class="date">Jul 2023 - Apr 2024</div><h3>Laravel Developer</h3><p>Codingclave Development LLP, Lucknow - Created and optimized Laravel applications, built REST APIs, mentored junior developers, and ensured high code quality across multiple projects.</p></div></div>
+            <div class="timeline-item right hidden"><div class="timeline-content"><div class="date">Jan 2023 - Jun 2023</div><h3>Laravel Developer Intern</h3><p>Nawabisouq PVT LTD , Lucknow - Assisted in developing web applications, wrote unit tests, and collaborated with senior developers to enhance application performance and security.</p></div></div>
         </div>
     </section>
     
-    <!-- Contact Section -->
+    <!-- Contact Section with WhatsApp Form -->
     <section class="contact" id="contact">
         <h2 class="section-title hidden">Contact <span>Me</span></h2>
-        
         <div class="contact-container">
             <div class="contact-info">
-                <div class="contact-card hidden">
-                    <i class="fas fa-envelope"></i>
-                    <div class="contact-details">
-                        <h3>Email</h3>
-                        <p><a href="mailto:prajapatineeraj204@gmail.com" style="
-                            text-decoration: none;
-                            color: white;
-                        ">prajapatineeraj204@gmail.com</a></p>
-                    </div>
-                </div>
-                
-                <div class="contact-card hidden">
-                    <i class="fas fa-phone"></i>
-                    <div class="contact-details">
-                        <h3>Phone</h3>
-                        <p><a href="tel:+918726831691" style="
-                            text-decoration: none;
-                            color: white;
-                        ">+91 8726831691</a></p>
-                    </div>
-                </div>
-                
-                <div class="contact-card hidden">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div class="contact-details">
-                        <h3>Location</h3>
-                        <p><a href="https://maps.app.goo.gl/v9jfuWzqttu2CQs99" target="_blank" style="
-                            text-decoration: none;
-                            color: white;
-                        ">Dariyapur, Ramnagar, Varanasi</a></p>
-                    </div>
-                </div>
+                <div class="contact-card hidden"><i class="fas fa-envelope"></i><div class="contact-details"><h3>Email</h3><p><a href="mailto:prajapatineeraj204@gmail.com" style="text-decoration:none; color:white;">prajapatineeraj204@gmail.com</a></p></div></div>
+                <div class="contact-card hidden"><i class="fas fa-phone"></i><div class="contact-details"><h3>Phone</h3><p><a href="tel:+918726831691" style="text-decoration:none; color:white;">+91 8726831691</a></p></div></div>
+                <div class="contact-card hidden"><i class="fas fa-map-marker-alt"></i><div class="contact-details"><h3>Location</h3><p><a href="https://maps.app.goo.gl/v9jfuWzqttu2CQs99" target="_blank" style="text-decoration:none; color:white;">Dariyapur, Ramnagar, Varanasi</a></p></div></div>
+            </div>
+            <!-- WhatsApp Contact Form -->
+            <div class="contact-form hidden">
+                <form id="whatsappForm">
+                    <div class="input-box"><span>Full Name</span><input type="text" id="name" placeholder="Enter your name" required></div>
+                    <div class="input-box"><span>Email Address</span><input type="email" id="email" placeholder="Enter your email" required></div>
+                    <div class="input-box"><span>Your Message</span><textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea></div>
+                    <button type="submit" class="btn"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+                    <div id="formStatus" class="form-status"></div>
+                </form>
             </div>
         </div>
     </section>
@@ -1109,7 +979,6 @@
             <a href="https://www.instagram.com/neeraj_software_engineer/"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/neerajprajapati1001"><i class="fab fa-facebook"></i></a>
         </div>
-        
         <p class="copyright">© 2025 Neeraj Prajapati. All Rights Reserved.</p>
     </footer>
     
@@ -1165,13 +1034,10 @@
         // Mobile Menu Toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navbar = document.querySelector('.navbar');
-        
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             navbar.classList.toggle('active');
         });
-        
-        // Close menu when clicking on a link
         document.querySelectorAll('.navbar a').forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
@@ -1182,142 +1048,81 @@
         // Scroll animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('show');
             });
         });
+        document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
         
-        const hiddenElements = document.querySelectorAll('.hidden');
-        hiddenElements.forEach(el => observer.observe(el));
-        
-        // Particles.js configuration
+        // Particles.js
         particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#00aaff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#00aaff",
-                    "opacity": 0.2,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
+            particles: { number: { value: 80, density: { enable: true, value_area: 800 } }, color: { value: "#00aaff" }, shape: { type: "circle" }, opacity: { value: 0.5 }, size: { value: 3, random: true }, line_linked: { enable: true, distance: 150, color: "#00aaff", opacity: 0.2, width: 1 }, move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out" } },
+            interactivity: { detect_on: "canvas", events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true }, modes: { grab: { distance: 140, line_linked: { opacity: 1 } }, push: { particles_nb: 4 } } },
+            retina_detect: true
         });
         
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
         
-        // Change navbar style on scroll
+        // WhatsApp Form Handler
+        const whatsappForm = document.getElementById('whatsappForm');
+        const formStatus = document.getElementById('formStatus');
+        const whatsappNumber = '918726831691'; // Your WhatsApp number without '+'
+
+        whatsappForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if(!name || !email || !message) {
+                formStatus.className = 'form-status error';
+                formStatus.innerHTML = '❌ Please fill in all fields before sending.';
+                setTimeout(() => { formStatus.className = 'form-status'; }, 3000);
+                return;
+            }
+            
+            if(!email.includes('@') || !email.includes('.')) {
+                formStatus.className = 'form-status error';
+                formStatus.innerHTML = '❌ Please enter a valid email address.';
+                setTimeout(() => { formStatus.className = 'form-status'; }, 3000);
+                return;
+            }
+            
+            // Format WhatsApp message
+            const currentDate = new Date().toLocaleString();
+            const whatsappMessage = `🌐 *New Portfolio Contact* 🌐%0A%0A👤 *Name:* ${encodeURIComponent(name)}%0A📧 *Email:* ${encodeURIComponent(email)}%0A💬 *Message:* ${encodeURIComponent(message)}%0A%0A📅 *Sent on:* ${encodeURIComponent(currentDate)}%0A🙏 *Please respond to this inquiry.*`;
+            
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+            
+            // Show success feedback
+            formStatus.className = 'form-status success';
+            formStatus.innerHTML = '✅ Redirecting to WhatsApp... Please send the message.';
+            
+            // Reset form after successful redirect
+            setTimeout(() => {
+                window.open(whatsappURL, '_blank');
+                // Optional: Clear form fields after submission
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('message').value = '';
+                setTimeout(() => {
+                    formStatus.className = 'form-status';
+                }, 5000);
+            }, 500);
+        });
+        
+        // Sticky header scroll effect
+        const header = document.querySelector('header');
         window.addEventListener('scroll', () => {
             header.classList.toggle('scrolled', window.scrollY > 50);
         });
     </script>
 </body>
-
 </html>
-
-
-
-
