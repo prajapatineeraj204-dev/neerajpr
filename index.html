@@ -107,6 +107,82 @@
         .timeline-content { padding: 20px 30px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 10px; backdrop-filter: blur(5px); }
         .timeline-content h3 { color: var(--primary); margin-bottom: 10px; }
         .date { color: var(--primary); font-weight: 600; margin-bottom: 5px; }
+        
+        /* Testimonial Styles */
+        .testimonial-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(5px);
+            transition: 0.5s;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(0, 170, 255, 0.15);
+        }
+        .quote-icon {
+            font-size: 50px;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+        }
+        .testimonial-text {
+            font-size: 18px;
+            line-height: 1.7;
+            margin: 20px 0 25px 0;
+            color: var(--text-light);
+            font-style: italic;
+            padding-left: 30px;
+        }
+        .client-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--card-border);
+            padding-top: 20px;
+            margin-top: 10px;
+        }
+        .client-name {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--primary);
+        }
+        .client-title {
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+        .client-location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            color: var(--text-dark);
+            background: rgba(0, 170, 255, 0.1);
+            padding: 5px 12px;
+            border-radius: 30px;
+        }
+        .client-location i {
+            font-size: 12px;
+            color: var(--primary);
+        }
+        .rating {
+            color: #FFD700;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
         .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         .contact-info { display: flex; flex-direction: column; gap: 20px; }
         .contact-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 15px; padding: 20px; display: flex; align-items: center; gap: 15px; backdrop-filter: blur(5px); transition: 0.3s; }
@@ -128,7 +204,7 @@
         @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
         .hidden { opacity: 0; filter: blur(5px); transform: translateY(50px); transition: all 1s; }
         .show { opacity: 1; filter: blur(0); transform: translateY(0); }
-        @media (max-width: 768px) { .menu-toggle { display: block; } .navbar { position: absolute; top: 100%; left: -100%; width: 80%; height: calc(100vh - 80px); background: var(--bg-darker); flex-direction: column; align-items: center; padding: 40px 0; transition: 0.5s; } .navbar.active { left: 0; } .hero { flex-direction: column; text-align: center; padding-top: 120px; } .hero-image { position: relative; right: auto; width: 280px; height: 280px; } .timeline::after { left: 31px; } .timeline-item { width: 100%; padding-left: 70px; } .right { left: 0; } .timeline-item::after { left: 21px; } .left::after, .right::after { left: 21px; } }
+        @media (max-width: 768px) { .menu-toggle { display: block; } .navbar { position: absolute; top: 100%; left: -100%; width: 80%; height: calc(100vh - 80px); background: var(--bg-darker); flex-direction: column; align-items: center; padding: 40px 0; transition: 0.5s; } .navbar.active { left: 0; } .hero { flex-direction: column; text-align: center; padding-top: 120px; } .hero-image { position: relative; right: auto; width: 280px; height: 280px; } .timeline::after { left: 31px; } .timeline-item { width: 100%; padding-left: 70px; } .right { left: 0; } .timeline-item::after { left: 21px; } .left::after, .right::after { left: 21px; } .testimonial-card { padding: 25px; } .testimonial-text { font-size: 16px; padding-left: 15px; } .client-info { flex-direction: column; align-items: flex-start; gap: 10px; } }
     </style>
 </head>
 <body>
@@ -139,7 +215,7 @@
         <nav class="navbar">
             <a href="#home">Home</a><a href="#about">About</a><a href="#resume">Resume</a>
             <a href="#services">Services</a><a href="#portfolio">Portfolio</a>
-            <a href="#experience">Experience</a><a href="#contact">Contact</a>
+            <a href="#experience">Experience</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
         </nav>
     </header>
     
@@ -194,23 +270,23 @@
             </div>
         </div>
          <div class="portfolio-card hidden">
-            <img src="image.png" alt="Peaktel">
+            <img src="image.png" alt="Portfolio">
             <div class="portfolio-layer">
-                <h4>PortFolio Webiste</h4>
+                <h4>Portfolio Website</h4>
                 <p>Modern portfolio with responsive design.</p>
                 <a href="https://devalsoni.com/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
             </div>
         </div>
         <div class="portfolio-card hidden">
-            <img src="shreehari.jpeg" alt="Peaktel">
+            <img src="shreehari.jpeg" alt="Marriage Lawn">
             <div class="portfolio-layer">
-                <h4>Marriage Lawn Webiste</h4>
+                <h4>Marriage Lawn Website</h4>
                 <p>Modern mobile friendly website marriage lawn with responsive design.</p>
                 <a href="https://shreeharimandapam.com/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
             </div>
         </div>
         <div class="portfolio-card hidden">
-            <img src="moter.jpeg" alt="Peaktel">
+            <img src="moter.jpeg" alt="Moter Cable Parts">
             <div class="portfolio-layer">
                 <h4>Moter Cable Parts</h4>
                 <p>Modern mobile friendly website Moter Cable Parts with responsive design.</p>
@@ -218,7 +294,7 @@
             </div>
         </div>
         <div class="portfolio-card hidden">
-            <img src="vakil.jpeg" alt="Peaktel">
+            <img src="vakil.jpeg" alt="Legal Consultants">
             <div class="portfolio-layer">
                 <h4>Advocates & Legal Consultants</h4>
                 <p>Modern mobile friendly website Advocates & Legal Consultants with responsive design.</p>
@@ -233,6 +309,31 @@
         <div class="timeline"><div class="timeline-item left hidden"><div class="timeline-content"><div class="date">Aug 2024 - Present</div><h3>Laravel Developer</h3><p>Kramate Pvt. Ltd., Ayodhya - Full-stack e-commerce platform with custom CMS and payment integrations.</p></div></div><div class="timeline-item right hidden"><div class="timeline-content"><div class="date">Apr 2024 - Jul 2024</div><h3>Laravel Developer</h3><p>Raidlayer Webhost LTD, Ahmedabad - Web applications, payment gateways, frontend collaboration.</p></div></div><div class="timeline-item left hidden"><div class="timeline-content"><div class="date">Jul 2023 - Apr 2024</div><h3>Laravel Developer</h3><p>Codingclave Development LLP, Lucknow - REST APIs, mentoring, high code quality.</p></div></div><div class="timeline-item right hidden"><div class="timeline-content"><div class="date">Jan 2023 - Jun 2023</div><h3>Laravel Developer Intern</h3><p>Nawabisouq PVT LTD, Lucknow - Unit testing, performance optimization.</p></div></div></div>
     </section>
     
+    <!-- NEW TESTIMONIALS SECTION -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title hidden">Client <span>Testimonials</span></h2>
+        <div class="testimonial-container">
+            <div class="testimonial-card hidden">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <div class="testimonial-text">
+                    "I reached out to Neeraj Prajapati a week ago as even the best tools online put up paywalls in the path towards completion. Neeraj understood our business needs, dealt with the bottlenecks and helped our firm go online faster and better than I expected. I strongly recommend him to anyone needing an expert web developer."
+                </div>
+                <div class="rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <div class="client-info">
+                    <div>
+                        <div class="client-name">N A Tyagi (Advocate)</div>
+                        <div class="client-title">Supreme Court of India</div>
+                    </div>
+                    <div class="client-location">
+                        <i class="fas fa-map-marker-alt"></i> Chamber #723, D-Block, Additional Building Complex, Supreme Court of India, New Delhi - 110001
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <section class="contact" id="contact">
         <h2 class="section-title hidden">Contact <span>Me</span></h2>
         <div class="contact-container">
@@ -243,7 +344,7 @@
     
     <footer><div class="social-links"><a href="https://github.com/prajapatineeraj204-dev"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/neeraj-prajapati-158875215"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="https://www.instagram.com/neeraj_software_engineer/"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/neerajprajapati1001"><i class="fab fa-facebook"></i></a></div><p class="copyright">© 2025 Neeraj Prajapati. All Rights Reserved.</p></footer>
     
-    <!-- ENHANCED JSON-LD: Multiple Schema Types for better Google Search visibility (Profile, Contact, About, Services, Skills, Portfolio) -->
+    <!-- ENHANCED JSON-LD: Added Testimonial schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -298,6 +399,7 @@
         "https://neerajpr.netlify.app/#about",
         "https://neerajpr.netlify.app/#services",
         "https://neerajpr.netlify.app/#portfolio",
+        "https://neerajpr.netlify.app/#testimonials",
         "https://neerajpr.netlify.app/#contact"
       ]
     }
@@ -384,12 +486,42 @@
       "name": "Portfolio Projects by Neeraj Prajapati",
       "description": "Recent web development projects showcasing Laravel, CMS, and e-commerce expertise.",
       "url": "https://neerajpr.netlify.app/#portfolio",
-      "numberOfItems": 3,
+      "numberOfItems": 7,
       "itemListElement": [
         { "@type": "CreativeWork", "position": 1, "name": "Kramate E-commerce CMS", "url": "https://kramate.com/", "description": "Full-stack e-commerce platform with custom CMS and payment gateway" },
         { "@type": "CreativeWork", "position": 2, "name": "Pilot Examinations", "url": "https://pilotexaminations.com/", "description": "Corporate website with Laravel backend and AJAX interactions" },
-        { "@type": "CreativeWork", "position": 3, "name": "Peaktel IT Solutions", "url": "https://peaktel.in/", "description": "Modern IT electronics company website" }
+        { "@type": "CreativeWork", "position": 3, "name": "Peaktel IT Solutions", "url": "https://peaktel.in/", "description": "Modern IT electronics company website" },
+        { "@type": "CreativeWork", "position": 4, "name": "Deval Soni Portfolio", "url": "https://devalsoni.com/", "description": "Modern portfolio website" },
+        { "@type": "CreativeWork", "position": 5, "name": "Shree Hari Mandapam", "url": "https://shreeharimandapam.com/", "description": "Marriage lawn venue website" },
+        { "@type": "CreativeWork", "position": 6, "name": "Havi Motors", "url": "https://havimotors.com/", "description": "Motor cable parts e-commerce" },
+        { "@type": "CreativeWork", "position": 7, "name": "Natyagi & Associates", "url": "https://natyagiandassociates.com/", "description": "Legal consultants firm website" }
       ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "ProfessionalService",
+        "name": "Neeraj Prajapati - Laravel Development Services"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "N A Tyagi",
+        "jobTitle": "Advocate",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Supreme Court of India"
+        }
+      },
+      "reviewBody": "I reached out to Neeraj Prajapati a week ago as even the best tools online put up paywalls in the path towards completion. Neeraj understood our business needs, dealt with the bottlenecks and helped our firm go online faster and better than I expected. I strongly recommend him to anyone needing an expert web developer."
     }
     </script>
     
